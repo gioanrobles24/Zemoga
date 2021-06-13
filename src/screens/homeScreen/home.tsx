@@ -14,17 +14,21 @@
    StatusBar,
    StyleSheet,
    Text,
+   Button
  } from 'react-native';
- import { NavigationContainer } from '@react-navigation/native';
- import MyStack from './src/nagivation/myStack'
 
- const App = () => {
+
+ const HomeScreen = ( { navigation }) => {
    
 
    return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
+     <SafeAreaView >
+       <StatusBar  barStyle="light-content" />
+       <Text style={{color:'white'}}>Home</Text>
+       <Button  
+         title="Go to detail"
+         onPress={ () => navigation.navigate('Detais') } />
+     </SafeAreaView>
    );
  };
 
@@ -32,19 +36,7 @@
    sectionContainer: {
      marginTop: 32,
      paddingHorizontal: 24,
-   },
-   sectionTitle: {
-     fontSize: 24,
-     fontWeight: '600',
-   },
-   sectionDescription: {
-     marginTop: 8,
-     fontSize: 18,
-     fontWeight: '400',
-   },
-   highlight: {
-     fontWeight: '700',
-   },
+   }
  });
 
- export default App;
+ export default HomeScreen;
